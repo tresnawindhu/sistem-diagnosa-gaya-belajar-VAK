@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Diagnosa Gaya Belajar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("BG2.PNG"); /* Ganti 'background.jpg' dengan path gambar latar belakang Anda */
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        max-width: 600px;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Menambahkan lapisan transparan */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        color: #fff; /* Menetapkan warna teks untuk elemen dalam .container */
+      }
+
+      h1 {
+        color: #fff; /* Menetapkan warna teks untuk h1 dalam .container */
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 10px;
+        color: #fff; /* Menetapkan warna teks untuk p dalam .container */
+      }
+
+      strong {
+        color: #fff; /* Menetapkan warna teks untuk kode dalam .container */
+      }
+
+      .flipbook-code {
+        background-color: #ff6600;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .copy-button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Selamat, kamu seorang kinestetik!</h1>
+      <p>
+        Terima kasih telah menjalani tes gaya belajar. Hasilnya menunjukkan
+        bahwa kamu adalah tipe kinestetik.
+      </p>
+      <p>Berikut merupakan kode untuk mengakses flipbook kamu:</p>
+      <p class="flipbook-code" id="flipbookCode">
+        <strong>K5dT1yPx</strong>
+      </p>
+      <!-- Gantilah "FLIPBOOK123" dengan kode yang sesuai -->
+      <button class="copy-button" onclick="copyCode()">Salin Kode</button>
+    </div>
+
+    <script>
+      function copyCode() {
+        var codeElement = document.getElementById("flipbookCode");
+        var codeText = codeElement.innerText || codeElement.textContent;
+        var tempInput = document.createElement("input");
+        tempInput.value = codeText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("Kode berhasil disalin: " + codeText);
+      }
+    </script>
+  </body>
+</html>
